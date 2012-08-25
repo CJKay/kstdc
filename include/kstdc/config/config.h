@@ -9,7 +9,6 @@
 #	include <kstdc/config/cpp.h>
 #	include <kstdc/config/externc.h>
 #	include <kstdc/config/inline.h>
-#	include <kstdc/config/null.h>
 #	include <kstdc/config/target.h>
 
 #endif
