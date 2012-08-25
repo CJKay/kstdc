@@ -1,0 +1,11 @@
+#ifndef KSTDC_STDNORETURN
+#	define KSTDC_STDNORETURN
+
+#	include <kstdc/config/config.h>
+
+#	ifndef __KSTD_CPLUSPLUS__
+#		define noreturn _Noreturn
+#	endif
+
+#endif
+
