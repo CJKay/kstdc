@@ -1,4 +1,4 @@
-#ifdef KSTDC_CONFIG_TARGET
+#ifndef KSTDC_CONFIG_TARGET
 #	define KSTDC_CONFIG_TARGET
 
 #	if (__KSTD_COMPILER__ == gcc) || (__KSTD_COMPILER__ == clang)
