@@ -6,7 +6,7 @@
 
 	__KSTD_EXTERNC_BEGIN
 
-#		ifndef __KSTD_CPLUSPLUS__
+#		if !__KSTD_CPLUSPLUS__
 #			define noreturn _Noreturn
 #		endif
 

@@ -6,7 +6,7 @@
 
 	__KSTD_EXTERNC_BEGIN
 		
-#		if __KSTD_COMPILER__ == gcc || __KSTD_COMPILER__ == clang
+#		if (__KSTD_COMPILER__ == gcc) || (__KSTD_COMPILER__ == clang)
 #			define FLT_ROUNDS			(__builtin_flt_rounds())
 			
 #			define FLT_EVAL_METHOD		__FLT_EVAL_METHOD__
@@ -22,7 +22,7 @@
 #			define LDBL_MANT_DIG		__LDBL_MANT_DIG__
 			
 			// FIXME: Change to just __{FLT, DBL, LDBL}_DECIMAL_DIG__ when compiler support is better
-#			if __KSTD_COMPILER__ == gcc || __KSTD_COMPILER__ == clang
+#			if (__KSTD_COMPILER__ == gcc) || (__KSTD_COMPILER__ == clang)
 #				ifndef __FLT_DECIMAL_DIG__
 #					define FLT_DECIMAL_DIG (2 + __FLT_DIG__ * 3010 / 10000)
 #				else

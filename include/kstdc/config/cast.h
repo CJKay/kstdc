@@ -2,7 +2,7 @@
 #ifndef KSTDC_CONFIG_CAST
 #	define KSTDC_CONFIG_CAST
 	
-#	include <kstdc/config/cpp.h>
+#	include "cpp.h"
 		
 #	ifdef __KSTD_CPLUSPLUS__
 #		define __kstd_static_cast(T, U) (static_cast<T>(U))

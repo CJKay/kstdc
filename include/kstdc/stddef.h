@@ -8,7 +8,7 @@
 	
 	__KSTD_EXTERNC_BEGIN
 		
-#		if __KSTDC_COMPILER__ == gcc || __KSTDC_COMPILER__ == clang
+#		if (__KSTD_COMPILER__ == gcc) || (__KSTD_COMPILER__ == clang)
 			typedef __PTRDIFF_TYPE__ ptrdiff_t;
 			typedef __WCHAR_TYPE__ wchar_t;
 			
@@ -17,7 +17,7 @@
 				long double __max_align_ld __attribute__((__aligned__(__alignof__(long double))));
 			} max_align_t;
 			
-#			define offsetof(t, md) kstd_static_cast(size_t, __builtin_offsetof(t, md))
+#			define offsetof(t, md) __kstd_static_cast(size_t, __builtin_offsetof(t, md))
 #		else
 #			error "Basic definitions not implemented for this compiler."
 #		endif

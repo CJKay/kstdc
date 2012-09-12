@@ -6,7 +6,7 @@
 
 	__KSTD_EXTERNC_BEGIN
 
-#		if __KSTDC_COMPILER__ == gcc || __KSTDC_COMPILER__ == clang
+#		if (__KSTD_COMPILER__ == gcc) || (__KSTD_COMPILER__ == clang)
 			typedef __INT8_TYPE__			int8_t;
 			typedef __INT16_TYPE__			int16_t;
 			typedef __INT32_TYPE__			int32_t;
@@ -45,7 +45,7 @@
 			typedef __INTMAX_TYPE__			intmax_t;
 			typedef __UINTMAX_TYPE__		uintmax_t;
 			
-#			if defined(__KSTD_CPLUSPLUS__) || defined(__STDC_LIMIT_MACROS)	
+#			if !__KSTD_CPLUSPLUS__ || defined(__STDC_LIMIT_MACROS)	
 #				define UINT8_MAX				__UINT8_MAX__
 #				define INT8_MAX					__INT8_MAX__
 #				define INT8_MIN					(-__INT8_MAX__ - 1)
@@ -105,7 +105,7 @@
 #				define WINT_MIN					(-WINT_MAX)
 #			endif
 			
-#			if !defined(__KSTD_CPLUSPLUS__) || defined(__STDC_CONSTANT_MACROS)
+#			if !__KSTD_CPLUSPLUS__ || defined(__STDC_CONSTANT_MACROS)
 #				define INT8_C(v)				__INT8_C(v)
 #				define UINT8_C(v)				__UINT8_C(v)
 #				define INT16_C(v)				__INT16_C(v)

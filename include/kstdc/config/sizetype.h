@@ -2,7 +2,7 @@
 #ifndef KSTDC_CONFIG_SIZETYPE
 #	define KSTDC_CONFIG_SIZETYPE
 
-#	include <kstdc/config/externc.h>
+#	include "externc.h"
 	
 	__KSTD_EXTERNC_BEGIN
 	

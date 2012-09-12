@@ -6,7 +6,7 @@
 
 	__KSTD_EXTERNC_BEGIN
 	
-#		if __KSTDC_COMPILER__ == gcc || __KSTDC_COMPILER__ == clang
+#		if (__KSTD_COMPILER__ == gcc) || (__KSTD_COMPILER__ == clang)
 #			define MB_LEN_MAX		__MB_LEN_MAX__
 #			define CHAR_BIT			__CHAR_BIT__
 			

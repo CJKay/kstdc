@@ -1,22 +1,21 @@
-#include <kstdc/string.h>
-#include <kstdc/target.h>
+#include "../../include/kstdc/string.h"
+#include "../../include/kstdc/config/asm.h"
 
 #undef memcpy
 
-void *memcpy(void * restrict src, const void * restrict dst, size_t n) {
-	char *a = dst;
-	
+void *memcpy(void * restrict s1, const void * restrict s2, size_t n) {
+	void *ret = s1;
+
 #if __KSTD_ARCH_BITS__ == 32
-	__kstd_asm_gnu("rep movsl; mov %3, %2; rep movsb" : "+S"(src), "+D" (a) : "c" (n / 4), "r" (n % 4) : "cc", "memory");
+	__kstd_gnuasm("rep movsl; mov %3, %2; rep movsb" : "+S"(s2), "+D" (s1) : "c" (n / 4), "r" (n % 4) : "cc", "memory");
 #elif __KSTD_ARCH_BITS__ == 64
-	__kstd_asm_gnu("rep movsq; mov %3, %2; rep movsb" : "+S"(src), "+D" (a) : "c" (n / 8), "r" (n % 8) : "cc", "memory");
+	__kstd_gnuasm("rep movsq; mov %3, %2; rep movsb" : "+S"(s2), "+D" (s1) : "c" (n / 8), "r" (n % 8) : "cc", "memory");
 #endif
 	
 	__kstd_noasm(
-		const char *b = src;
-		for(; n > 0; --n) *a++ = *b++;
+		for(; n > 0; --n) *s1++ = *s2++;
 	);
 	
-	return a;
+	return ret;
 }
 

@@ -7,7 +7,7 @@
 #	include <kstdc/config/cast.h>
 		
 #	if (__KSTD_COMPILER__ == gcc) || (__KSTD_COMPILER__ == clang)
-#		ifndef __KSTD_CPLUSLUS__
+#		if !__KSTD_CPLUSLUS__
 #			define NULL __kstd_static_cast(void *, 0)
 #		else
 #			define NULL 0

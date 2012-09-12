@@ -2,7 +2,7 @@
 #ifndef KSTDC_CONFIG_ASM
 #	define KSTDC_CONFIG_ASM
 	
-#	include <kstdc/config/compiler.h>
+#	include "compiler.h"
 	
 #	ifndef __KSTD_NO_INLINEASM__
 #		if (__KSTD_COMPILER__ == gcc) || (__KSTD_COMPILER__ == clang)

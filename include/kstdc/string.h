@@ -2,8 +2,7 @@
 #ifndef KSTDC_STRING
 #	define KSTDC_STRING
 
-#	include <kstdc/config/config.h>
-#	include <kstdc/config/sizetype.h>
+#	include "config/sizetype.h"
 
 	__KSTD_EXTERNC_BEGIN
 		
