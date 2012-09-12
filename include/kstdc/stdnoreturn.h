@@ -1,3 +1,4 @@
+#pragma once
 #ifndef KSTDC_STDNORETURN
 #	define KSTDC_STDNORETURN
 

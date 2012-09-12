@@ -1,3 +1,4 @@
+#pragma once
 #ifndef KSTDC_STDBOOL
 #	define KSTDC_STDBOOL
 	

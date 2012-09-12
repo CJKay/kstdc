@@ -1,3 +1,4 @@
+#pragma once
 #ifndef KSTDC_CONFIG_EXTERNC
 #	define KSTDC_CONFIG_EXTERNC
 	

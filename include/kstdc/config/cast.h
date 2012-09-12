@@ -1,3 +1,4 @@
+#pragma once
 #ifndef KSTDC_CONFIG_CAST
 #	define KSTDC_CONFIG_CAST
 	

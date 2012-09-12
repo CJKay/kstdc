@@ -1,3 +1,4 @@
+#pragma once
 #ifndef KSTDC_FLOAT
 #	define KSTDC_FLOAT
 	

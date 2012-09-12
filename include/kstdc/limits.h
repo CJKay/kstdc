@@ -1,3 +1,4 @@
+#pragma once
 #ifndef KSTDC_LIMITS
 #	define KSTDC_LIMITS
 	

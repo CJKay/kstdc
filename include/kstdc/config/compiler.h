@@ -1,3 +1,4 @@
+#pragma once
 #ifndef KSTDC_CONFIG_COMPILER
 #	define KSTDC_CONFIG_COMPILER
 

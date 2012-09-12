@@ -1,3 +1,4 @@
+#pragma once
 #ifndef KSTDC_STDARG
 #	define KSTDC_STDARG
 	
