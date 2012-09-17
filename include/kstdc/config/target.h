@@ -4,11 +4,11 @@
 
 #	if (__KSTD_COMPILER__ == gcc) || (__KSTD_COMPILER__ == clang)
 #		if defined(__i386__)
-#			define __KSTD_ARCH__ x86
-#			define __KSTD_ARCH_BITS__ 32
+#			define __KSTD_ARCH__ i386
 #		elif defined(__x86_64__)
-#			define __KSTD_ARCH__ x86
-#			define __KSTD_ARCH_BITS__ 64
+#			define __KSTD_ARCH__ amd64
+#		else
+#			define __KSTD_ARCH__ unknown
 #		endif
 #	endif
 
