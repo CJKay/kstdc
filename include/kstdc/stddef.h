@@ -2,9 +2,9 @@
 #ifndef KSTDC_STDDEF
 #	define KSTDC_STDDEF
 	
-#	include <kstdc/config/config.h>
-#	include <kstdc/config/sizetype.h>
-#	include <kstdc/config/null.h>
+#	include "config/compiler.h"
+#	include "config/sizetype.h"
+#	include "config/null.h"
 	
 	__KSTD_EXTERNC_BEGIN
 		
@@ -17,7 +17,10 @@
 				long double __max_align_ld __attribute__((__aligned__(__alignof__(long double))));
 			} max_align_t;
 			
-#			define offsetof(t, md) __kstd_static_cast(size_t, __builtin_offsetof(t, md))
+			typedef __KSTD_SIZE_TYPE__ size_t;
+			
+#			define NULL __KSTD_NULL__
+#			define offsetof(t, md) __builtin_offsetof(t, md)
 #		else
 #			error "Basic definitions not implemented for this compiler."
 #		endif

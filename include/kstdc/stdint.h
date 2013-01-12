@@ -2,7 +2,7 @@
 #ifndef KSTDC_STDINT
 #	define KSTDC_STDINT
 	
-#	include <kstdc/config/config.h>
+#	include "config/compiler.h"
 
 	__KSTD_EXTERNC_BEGIN
 
@@ -45,7 +45,7 @@
 			typedef __INTMAX_TYPE__			intmax_t;
 			typedef __UINTMAX_TYPE__		uintmax_t;
 			
-#			if !__KSTD_CPLUSPLUS__ || defined(__STDC_LIMIT_MACROS)	
+#			if defined(__STDC_LIMIT_MACROS)
 #				define UINT8_MAX				__UINT8_MAX__
 #				define INT8_MAX					__INT8_MAX__
 #				define INT8_MIN					(-__INT8_MAX__ - 1)
@@ -105,7 +105,7 @@
 #				define WINT_MIN					(-WINT_MAX)
 #			endif
 			
-#			if !__KSTD_CPLUSPLUS__ || defined(__STDC_CONSTANT_MACROS)
+#			if defined(__STDC_CONSTANT_MACROS)
 #				define INT8_C(v)				__INT8_C(v)
 #				define UINT8_C(v)				__UINT8_C(v)
 #				define INT16_C(v)				__INT16_C(v)
@@ -119,7 +119,7 @@
 #				define UINTMAX_C(v)				__UINTMAX_C(v)
 #			endif
 #		else
-#			error "Basic types not implemented for this compiler."
+#			error "Integer types not implemented for this compiler."
 #		endif
 
 	__KSTD_EXTERNC_END

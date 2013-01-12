@@ -1,15 +1,16 @@
 #pragma once
-#ifndef KSTDC_CONFIG_SIZETYPE
-#	define KSTDC_CONFIG_SIZETYPE
+#ifndef __KSTDC_CONFIG_SIZETYPE_H__
+#	define __KSTDC_CONFIG_SIZETYPE_H__
 
 #	include "externc.h"
+#	include "compiler.h"
 	
 	__KSTD_EXTERNC_BEGIN
 	
 #		if (__KSTD_COMPILER__ == gcc) || (__KSTD_COMPILER__ == clang)
-			typedef __SIZE_TYPE__ size_t;
+			typedef __SIZE_TYPE__ __KSTD_SIZE_TYPE__;
 #		else
-#			warning "No way to implement size_t on this compiler."
+#			error "No way to implement size_t on this compiler."
 #		endif
 	
 	__KSTD_EXTERNC_BEGIN

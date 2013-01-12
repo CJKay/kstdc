@@ -1,17 +1,15 @@
 #pragma once
-#ifndef KSTDC_CONFIG_NULL
-#	define KSTDC_CONFIG_NULL
+#ifndef __KSTDC_CONFIG_NULL_H__
+#	define __KSTDC_CONFIG_NULL_H__
 
-#	include <kstdc/config/compiler.h>
-#	include <kstdc/config/cpp.h>
-#	include <kstdc/config/cast.h>
-		
-#	if (__KSTD_COMPILER__ == gcc) || (__KSTD_COMPILER__ == clang)
-#		if !__KSTD_CPLUSLUS__
-#			define NULL __kstd_static_cast(void *, 0)
-#		else
-#			define NULL 0
-#		endif
+#	include "compiler.h"
+#	include "cpp.h"
+#	include "cast.h"
+
+#	if __KSTDCPP__
+#		define __KSTD_NULL__ 0
+#	else
+#		define __KSTD_NULL__ __kstd_static_cast(void *, 0)
 #	endif
 
 #endif

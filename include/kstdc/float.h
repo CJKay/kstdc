@@ -1,8 +1,9 @@
 #pragma once
-#ifndef KSTDC_FLOAT
-#	define KSTDC_FLOAT
+#ifndef __KSTDC_FLOAT_H__
+#	define __KSTDC_FLOAT_H__
 	
-#	include <kstdc/config/config.h>
+#	include "config/externc.h"
+#	include "config/compiler.h"
 
 	__KSTD_EXTERNC_BEGIN
 		
@@ -22,26 +23,22 @@
 #			define LDBL_MANT_DIG		__LDBL_MANT_DIG__
 			
 			// FIXME: Change to just __{FLT, DBL, LDBL}_DECIMAL_DIG__ when compiler support is better
-#			if (__KSTD_COMPILER__ == gcc) || (__KSTD_COMPILER__ == clang)
-#				ifndef __FLT_DECIMAL_DIG__
-#					define FLT_DECIMAL_DIG (2 + __FLT_DIG__ * 3010 / 10000)
-#				else
-#					define FLT_DECIMAL_DIG __FLT_DECIMAL_DIG__
-#				endif
-				
-#				ifndef __DBL_DECIMAL_DIG__
-#					define DBL_DECIMAL_DIG (2 + __DBL_DIG__ * 3010 / 10000)
-#				else
-#					define DBL_DECIMAL_DIG __DBL_DECIMAL_DIG__
-#				endif
-				
-#				ifndef __LDBL_DECIMAL_DIG__
-#					define LDBL_DECIMAL_DIG (2 + __LDBL_DIG__ * 3010 / 10000)
-#				else
-#					define LDBL_DECIMAL_DIG __LDBL_DECIMAL_DIG__
-#				endif
+#			ifndef __FLT_DECIMAL_DIG__
+#				define FLT_DECIMAL_DIG (2 + __FLT_DIG__ * 3010 / 10000)
 #			else
-#				#error "__{FLT, DBL, LDBL}_DECIMAL_DIG__ missing from this compiler."
+#				define FLT_DECIMAL_DIG __FLT_DECIMAL_DIG__
+#			endif
+
+#			ifndef __DBL_DECIMAL_DIG__
+#				define DBL_DECIMAL_DIG (2 + __DBL_DIG__ * 3010 / 10000)
+#			else
+#				define DBL_DECIMAL_DIG __DBL_DECIMAL_DIG__
+#			endif
+
+#			ifndef __LDBL_DECIMAL_DIG__
+#				define LDBL_DECIMAL_DIG (2 + __LDBL_DIG__ * 3010 / 10000)
+#			else
+#				define LDBL_DECIMAL_DIG __LDBL_DECIMAL_DIG__
 #			endif
 			
 #			define DECIMAL_DIG		__DECIMAL_DIG__
@@ -57,14 +54,18 @@
 #			define FLT_MIN_10_EXP	__FLT_MIN_10_EXP__
 #			define DBL_MIN_10_EXP	__DBL_MIN_10_EXP__
 #			define LDBL_MIN_10_EXP	__LDBL_MIN_10_EXP__
+
+#			define FLT_MAX_EXP		__FLT_MAX_EXP__
+#			define DBL_MAX_EXP		__DBL_MAX_EXP__
+#			define LDBL_MAX_EXP		__LDBL_MAX_EXP__
 			
 #			define FLT_MAX_10_EXP	__FLT_MAX_10_EXP__
 #			define DBL_MAX_10_EXP	__DBL_MAX_10_EXP__
 #			define LDBL_MAX_10_EXP	__LDBL_MAX_10_EXP__
-			
-#			define FLT_MAX_EXP		__FLT_MAX_EXP__
-#			define DBL_MAX_EXP		__DBL_MAX_EXP__
-#			define LDBL_MAX_EXP		__LDBL_MAX_EXP__
+
+#			define FLT_MAX			__FLT_MAX__
+#			define DBL_MAX			__DBL_MAX__
+#			define LDBL_MAX			__LDBL_MAX__
 			
 #			define FLT_EPSILON		__FLT_EPSILON__
 #			define DBL_EPSILON		__DBL_EPSILON__

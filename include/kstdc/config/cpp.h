@@ -1,11 +1,12 @@
 #pragma once
-#ifndef KSTDC_CONFIG_CPP
-#	define KSTDC_CONFIG_CPP
-	
-#	if defined(__cplusplus) && !defined(__KSTD_CPLUSPLUS__)
-#		define __KSTD_CPLUSPLUS__ 1
-#	else
-#		define __KSTD_CPLUSPLUS__ 0
-#	endif
+#ifndef __KSTDC_CONFIG_CPP_H__
+#	define __KSTDC_CONFIG_CPP_H__
+
+#ifdef __KSTD_DOXYGEN__
+#	define __KSTD_NOCPLUSPLUS__ //!< User-definable macro that forces use of only libkstdc when using C++.
+#endif
+
+#	define __KSTDC__ 1 //!< libkstdc identifier.
+#	define __KSTDCPP__ (!__KSTD_NOCPLUSPLUS__ && defined(__cplusplus)) //!< libkstdcpp identifier.
 
 #endif

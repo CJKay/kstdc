@@ -1,6 +1,8 @@
 #pragma once
-#ifndef KSTDC_CONFIG_TARGET
-#	define KSTDC_CONFIG_TARGET
+#ifndef __KSTDC_CONFIG_TARGET_H__
+#	define __KSTDC_CONFIG_TARGET_H__
+
+#	include "compiler.h"
 
 #	if (__KSTD_COMPILER__ == gcc) || (__KSTD_COMPILER__ == clang)
 #		if defined(__i386__)

@@ -2,11 +2,12 @@
 #ifndef KSTDC_STDNORETURN
 #	define KSTDC_STDNORETURN
 
-#	include <kstdc/config/config.h>
+#	include "config/externc.h"
+#	include "config/cpp.h"
 
 	__KSTD_EXTERNC_BEGIN
 
-#		if !__KSTD_CPLUSPLUS__
+#		if !__KSTDCPP__
 #			define noreturn _Noreturn
 #		endif
 

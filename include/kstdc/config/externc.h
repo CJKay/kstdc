@@ -1,10 +1,10 @@
 #pragma once
-#ifndef KSTDC_CONFIG_EXTERNC
-#	define KSTDC_CONFIG_EXTERNC
+#ifndef __KSTDC_CONFIG_EXTERNC_H__
+#	define __KSTDC_CONFIG_EXTERNC_H__
 	
 #	include "cpp.h"
 		
-#	if __KSTD_CPLUSPLUS__
+#	if __KSTDCPP__
 #		define __KSTD_EXTERNC_BEGIN extern "C" {
 #		define __KSTD_EXTERNC_END }
 #	else
